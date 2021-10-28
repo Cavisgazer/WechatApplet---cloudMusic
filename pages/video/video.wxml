@@ -1,0 +1,88 @@
+<!--pages/video/video.wxml-->
+<!--头部区域-->
+<view class="videoContainer">
+  <view class="header">
+<image src="/static/img/video/video.jpg"></image>
+<view class="search">
+  <input type="text" value="搜索音乐"/>
+</view>
+<image src="/static/img/logo.png"></image>
+</view>
+
+<!--  导航区域-->
+<scroll-view 
+class="navScroll"
+scroll-x="true"
+enable-flex="true"
+scroll-into-view="{{'m' + navId}}"
+scroll-with-animation="true">
+  <view 
+  id= "{{'m' + item.id}}"
+  class="navItem"
+  wx:for="{{videoGroupList}}"
+  wx:key="id">
+    <view class="navContent {{navId == item.id? 'active' : ''}}" bindtap="changeNav"
+    id="{{item.id}}">
+      {{item.name}}
+    </view>
+  </view>
+</scroll-view>
+
+<!--视频列表区域-->
+<scroll-view
+scroll-y="true"
+class="videoScroll"
+bindrefresherrefresh="handleRefresher"
+refresher-enabled="true"
+refresher-triggered="{{isTriggered}}"
+bindscrolltolower="handleTolower"
+>
+<view 
+class="videoItem"
+wx:for="{{videoList}}"
+wx:key= "id"
+>
+<video 
+class="common"
+custom-cache="true"
+poster="item.coverUrl"
+bindplay="handlePlay"
+id="{{item.id}}"
+title="{{item.title}}"
+src="{{item.videoUrl}}"
+object-fit="cover"
+bindtimeupdate="handleTimeUpdate"
+bindended="handleEnded"
+bindloadedmetadata="handleLoading"
+wx:if="{{videoId == item.id}}"></video>
+
+<!--性能优化：使用image图片代替video标签-->
+<image 
+wx:else
+class="common" 
+bindtap="handlePlay"
+id="{{item.id}}"
+src="{{item.coverUrl}}"></image>
+
+<view class="content">{{item.title}}</view>
+      <!-- 底部 -->
+      <view class="footer">
+        <image class="avatar" src="{{item.creator.avatarUrl}}"></image>
+        <text class="nickName">{{item.creator.nickname}}</text>
+        <view class="comments_praised">
+          <text class="item">
+            <text class="iconfont icon-shoucang"></text>
+            <text class="count">{{item.praisedCount}}</text>
+          </text>
+          <text class="item">
+            <text class="iconfont icon-pinglun"></text>
+            <text class="count">{{item.commentCount}}</text>
+          </text>
+          <button open-type="share" class="item btn">
+            <text class="iconfont icon-gengduo"></text>
+          </button>
+        </view>
+      </view>
+</view>
+</scroll-view>
+</view>

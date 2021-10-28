@@ -1,0 +1,7 @@
+/* 全局公共样式文件 */
+/* 引入字体*/
+@import "/static/iconfont/iconfont.wxss";
+
+page {
+  height: 100%;
+}

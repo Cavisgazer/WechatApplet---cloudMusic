@@ -1,0 +1,8 @@
+<!--components/navHeader/navHeader.wxml-->
+<view class="header">
+      <text class="title">{{title}}</text>
+      <view class="titleMore">
+        <text>{{titleText}}</text>
+        <text class="more">{{contentText}}</text>
+        </view>
+        </view>

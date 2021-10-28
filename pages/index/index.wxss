@@ -1,0 +1,138 @@
+/* pages/index/index.wxss */
+/*轮播图*/
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner {
+  width: 640rpx;
+  height: 350rpx;
+  margin-top: 5rpx;
+}
+.videoContainer .header {
+  display: flex;
+  padding: 10rpx ;
+}
+.videoContainer .header image {
+  width: 60rpx;
+  height: 60rpx;
+}
+.videoContainer .header .search {
+  border: 1rpx solid #eee;
+  flex: 1;
+  margin: 0 20rpx;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: #d43c33;
+}
+.banner image {
+  width: 100%;
+  height: 100%;
+  border: 1px solid transparent;
+  border-radius: 10px;
+}
+/*导航区域*/
+.navContainer {
+  display: flex;
+}
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+}
+.navItem .iconfont {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100rpx;
+  background: rgb(240, 19, 19);
+  color: #ffffff;
+  font-size: 50rpx;
+  margin: 20rpx 0;
+}
+.navItem text {
+  font-size: 26rpx;
+}
+/* 推荐歌曲*/
+.recommend {
+  padding: 20rpx;
+}
+.recommend .header .title {
+  font-size: 32rpx;
+  line-height: 80rpx;
+  color: #666;
+}
+.recommend .header .titleMore {
+  display: flex;
+  justify-content: space-between;
+}
+.recommend .header .more {
+  border: 1rpx solid #333;
+  padding: 10rpx 20rpx;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+}
+/* 内容滑块区域*/
+.recommendScroll {
+  display: flex;
+  padding: 10rpx;
+  height: 300rpx;
+}
+.scrollItem {
+  width: 200rpx;
+  margin-right: 20rpx;
+}
+.scrollItem image {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}
+.scrollItem text{
+  display: block;
+  font-size: 24rpx;
+  /*单行文本溢出隐藏，省略号代替*/
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+  /*多行文本溢出影藏，省略号代替*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical; /* 设置对齐模式*/
+  -webkit-line-clamp: 2; /*设置文本行数*/
+}
+
+/*排行榜*/
+.topListSwiper {
+  height: 600rpx;
+}
+.topList {
+  padding: 20rpx;
+}
+.swiperItem .title {
+  font-size: 30rpx;
+  line-height: 80rpx;
+}
+.swiperItem image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+}
+.musicItem {
+  display: flex;
+  margin: 20rpx;
+}
+.musicItem .count {
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+.musicItem .musicName {
+  line-height: 100rpx;
+  text-align: center;
+}
